@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cyber Attack Risk Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Cyber Attack Risk Predictor</h2>
+        <form method="POST" action="/predict">
+            <label>Network Packet Size:</label>
+            <input type="number" name="network_packet_size" required>
+
+            <label>Protocol Type:</label>
+            <select name="protocol_type">
+                <option value="TCP">TCP</option>
+                <option value="UDP">UDP</option>
+            </select>
+
+            <label>Login Attempts:</label>
+            <input type="number" name="login_attempts" required>
+
+            <label>Session Duration (seconds):</label>
+            <input type="number" step="any" name="session_duration" required>
+
+            <label>Encryption Used:</label>
+            <select name="encryption_used">
+                <option value="DES">DES</option>
+                <option value="AES">AES</option>
+            </select>
+
+            <label>IP Reputation Score:</label>
+            <input type="number" step="any" name="ip_reputation_score" required>
+
+            <label>Failed Logins:</label>
+            <input type="number" name="failed_logins" required>
+
+            <label>Browser Type:</label>
+            <select name="browser_type">
+                <option value="Chrome">Chrome</option>
+                <option value="Firefox">Firefox</option>
+                <option value="Edge">Edge</option>
+                <option value="Unknown">Unknown</option>
+            </select>
+
+            <label>Unusual Time Access (0 or 1):</label>
+            <input type="number" name="unusual_time_access" required>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction_text %}
+            <div class="prediction">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
