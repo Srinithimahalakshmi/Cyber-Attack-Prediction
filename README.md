@@ -1,141 +1,143 @@
-# Cyber Attack Prediction System 🛡️
+Here’s a polished and engaging **README** template tailored for your **Cyber-Attack-Prediction** GitHub repository, complete with emojis to add flair while keeping it professional:
 
-![Cyber Security](https://img.shields.io/badge/domain-cybersecurity-blue) ![Machine Learning](https://img.shields.io/badge/ML-Classification-green) ![Python](https://img.shields.io/badge/Python-3.8%2B-yellow)
+---
 
-Machine learning system for predicting cyber attacks using network traffic data. Includes data preprocessing, feature engineering, and multiple classification models.
+````markdown
+#  Cyber-Attack Prediction System
 
-## Features ✨
-- Data preprocessing pipeline for network traffic data
-- Feature engineering for security-relevant patterns
-- Multiple ML models (Random Forest, XGBoost, Neural Networks)
-- Model evaluation metrics and visualization
-- SHAP explainability for attack predictions
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
+[![Python Version](https://img.shields.io/badge/Python-3.x-blue.svg)]()
 
-## Installation 🚀
+##  Overview
+A machine learning system that predicts cyber attacks using network traffic data—leveraging logistic regression, feature engineering, and a user-friendly web interface powered by Flask, HTML, and CSS. Detect threats in real time!
 
-### Prerequisites
-- Python 3.8+
-- pip package manager
+##  Features
+-  Data preprocessing pipeline for network traffic  
+-  Feature engineering to extract meaningful patterns  
+-  Multiple ML models: Logistic Regression, Random Forest, XGBoost, Neural Networks  
+-  Model performance metrics and visualizations  
+-  SHAP explainability for transparent predictions
 
-### Setup
+##  Table of Contents
+- [⚙️ Installation](#-installation)  
+- [🚀 Usage](#-usage)  
+- [📁 Project Structure](#-project-structure)  
+- [📊 Results](#-results)  
+- [🤝 Contributing](#-contributing)  
+- [📜 License](#-license)  
+- [📬 Contact](#-contact)
+
+---
+
+##  Installation
+
 ```bash
-# Clone repository
 git clone https://github.com/Srinithimahalakshmi/Cyber-Attack-Prediction.git
 cd Cyber-Attack-Prediction
 
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/MacOS
-venv\Scripts\activate     # Windows
-
-# Install dependencies
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-Dataset 📊
-CIC-IDS2017 Dataset - Contains benign and common attack network flows
+````
 
-Included in data/ directory
+You’ll need Python 3.8+ and pip. The repository includes a processed subset of the CIC-IDS2017 dataset.
 
-Features:
+---
 
-Flow duration
+## Usage
 
-Packet size statistics
+### 1. Data Preprocessing
 
-Protocol information
-
-Flag counts
-
-Attack types:
-
-DDoS
-
-PortScan
-
-Brute Force
-
-Web Attacks
-
-Usage 🧪
-1. Data Preprocessing
-bash
+```bash
 python src/data_preprocessing.py
-2. Model Training
-bash
-# Train Random Forest model
-python src/models/train_rf.py
+```
 
-# Train XGBoost model
+### 2. Model Training
+
+Train models such as Random Forest or XGBoost:
+
+```bash
+python src/models/train_rf.py
 python src/models/train_xgb.py
-3. Model Evaluation
-bash
+```
+
+### 3. Model Evaluation
+
+```bash
 python src/evaluate.py --model models/random_forest.pkl
-4. Generate Predictions
-python
+```
+
+### 4. Generate Predictions
+
+```python
 from src.predict import AttackPredictor
 
 predictor = AttackPredictor('models/random_forest.pkl')
 sample = [...]  # Input feature vector
 prediction = predictor.predict(sample)
-print(f"Attack probability: {prediction}")
-Results 📈
-Model	Accuracy	Precision	Recall	F1-Score
-Random Forest	98.7%	97.2%	96.8%	97.0%
-XGBoost	99.1%	98.5%	97.9%	98.2%
-Neural Network	98.2%	96.8%	97.1%	96.9%
-https://results/confusion_matrix.png
+print(f"Attack probability: {prediction:.2%}")
+```
 
-Repository Structure 📂
-text
-├── data/                   # Raw and processed datasets
-│   ├── raw/                # Original CIC-IDS2017 data
-│   └── processed/          # Preprocessed datasets
-│
-├── notebooks/              # Exploratory analysis notebooks
-│   ├── EDA.ipynb
-│   └── Feature_Engineering.ipynb
-│
-├── src/                    # Source code
-│   ├── data_preprocessing.py
-│   ├── feature_engineering.py
-│   ├── evaluate.py
-│   ├── predict.py
-│   └── models/             # Model training scripts
-│       ├── train_rf.py
-│       ├── train_xgb.py
-│       └── train_nn.py
-│
-├── models/                 # Saved model files
-├── results/                # Evaluation metrics and plots
-├── requirements.txt        # Python dependencies
-└── LICENSE
-Key Files 🔑
-notebooks/EDA.ipynb - Exploratory data analysis
+---
 
-src/data_preprocessing.py - Data cleaning pipeline
+## Project Structure
 
-src/feature_engineering.py - Feature creation module
+| Path               | Description                           |
+| ------------------ | ------------------------------------- |
+| `data/`            | Raw & processed datasets              |
+| `notebooks/`       | EDA & feature-engineering notebooks   |
+| `src/`             | Source code, including models & utils |
+| `models/`          | Trained model files                   |
+| `results/`         | Metrics & plot outputs                |
+| `requirements.txt` | Dependencies                          |
+| `LICENSE`          | MIT License                           |
 
-src/models/train_xgb.py - XGBoost training script
+---
 
-src/predict.py - Prediction interface
+## Results
 
-Contributing 🤝
-Contributions are welcome! Please follow these steps:
+| Model          | Accuracy | Precision | Recall | F1-Score |
+| -------------- | -------- | --------- | ------ | -------- |
+| Random Forest  | 98.7%    | 97.2%     | 96.8%  | 97.0%    |
+| XGBoost        | 99.1%    | 98.5%     | 97.9%  | 98.2%    |
+| Neural Network | 98.2%    | 96.8%     | 97.1%  | 96.9%    |
 
-Fork the repository
+Visual outputs like confusion matrices and SHAP explainability plots are available in the `results/` folder.
 
-Create a new branch (git checkout -b feature/your-feature)
+---
 
-Commit changes (git commit -am 'Add new feature')
+## Contributing
 
-Push to branch (git push origin feature/your-feature)
+Contributions are welcome! Whether it's improved models, additional UI enhancements, or documentation updates, we'd love your help.
+Steps to contribute:
 
-Open a pull request
+1. Fork the repo
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Make your changes & commit (`git commit -m 'Add feature...'`)
+4. Push to your branch & open a Pull Request
 
-License 📄
-This project is licensed under the MIT License - see LICENSE file for details.
+---
 
-Contact 📬
-Srinithi Mahalakshmi
-https://img.shields.io/badge/LinkedIn-Connect-blue
-https://img.shields.io/badge/GitHub-Follow-lightgrey
+## License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contact
+
+👤 **Maintainer**: Srinithi Mahalakshmi
+📧 **Email**: [srinithiarumugam2003@gmail.com](mailto:your.email@example.com)
+🔗 **GitHub**: [Srinithimahalakshmi](https://github.com/Srinithimahalakshmi)
+
+---
+
+⭐ *If this project helped, please give it a star!*
+
+```
+
+---
+
+Feel free to let me know if you'd like adjustments like specific model metrics, dataset details, or additional emojis—happy to help further!
+::contentReference[oaicite:0]{index=0}
+```
