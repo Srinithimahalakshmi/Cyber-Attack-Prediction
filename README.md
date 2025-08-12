@@ -122,7 +122,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ## Contact
 
 👤 **Maintainer**: Srinithi Mahalakshmi
-📧 **Email**: [your.email@example.com](mailto:your.email@example.com)
+📧 **Email**: [srinithi2003@gmail.com](mailto:your.email@example.com)
 🔗 **GitHub**: [Srinithimahalakshmi](https://github.com/Srinithimahalakshmi)
 
 ---
