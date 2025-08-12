@@ -1,9 +1,4 @@
-Here’s a polished and engaging **README** template tailored for your **Cyber-Attack-Prediction** GitHub repository, complete with emojis to add flair while keeping it professional:
-
----
-
-````markdown
-#  Cyber-Attack Prediction System
+ Cyber-Attack Prediction System
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
 [![Python Version](https://img.shields.io/badge/Python-3.x-blue.svg)]()
@@ -127,7 +122,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ## Contact
 
 👤 **Maintainer**: Srinithi Mahalakshmi
-📧 **Email**: [srinithiarumugam2003@gmail.com](mailto:your.email@example.com)
+📧 **Email**: [your.email@example.com](mailto:your.email@example.com)
 🔗 **GitHub**: [Srinithimahalakshmi](https://github.com/Srinithimahalakshmi)
 
 ---
